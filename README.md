@@ -22,7 +22,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Devise example:
+
+    config.omniauth :snapchat, ENV['SNAPCHAT_KEY'], ENV['SNAPCHAT_SECRET'], scope: 'https://auth.snapchat.com/oauth2/api/user.display_name https://auth.snapchat.com/oauth2/api/user.bitmoji.avatar'
 
 ## Development
 
