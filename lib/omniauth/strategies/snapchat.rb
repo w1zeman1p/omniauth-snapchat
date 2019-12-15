@@ -8,12 +8,16 @@ module OmniAuth
       option :name, "snapchat"
 
       option :client_options, {
-        :site          => 'https://adsapi.snapchat.com',
-        :authorize_url => 'https://accounts.snapchat.com/login/oauth2/authorize',
-          :token_url => 'https://accounts.snapchat.com/accounts/oauth2/token'
+        site: 'https://adsapi.snapchat.com',
+        authorize_url: 'https://accounts.snapchat.com/accounts/oauth2/auth',
+        token_url: 'https://accounts.snapchat.com/accounts/oauth2/token'
+      }
+      option :authorize_params, {
+        code_challenge: 'c25hcGNoYXR0ZXN0',
+        code_challenge_method: 'S256'
       }
 
-      uid{ raw_info['me']['id'] }
+      uid { raw_info['me']['id'] }
 
       info do
         {
